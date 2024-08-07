@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Merhaba saliha djangoya başlamış bulunmaktasın.</h1>
+    
+    {% for urun in urunler %} 
+     <h3>{{urun.urunismi}}</h3>
+     <h4>{{urun.aciklama}}</h4>
+     <h5>{{urun.fiyat}}</h5>
+     <a href="{% url 'detay' urun.id %}">Detaya Git</a>
+    {% endfor %}
+
+    <!--eğer veri çekiyorsan iki tane kırlangıç koyarsın ama mesela yukarıda detay sayfası için tek kırlangıç koyduk.-->
+</body>
+</html>
